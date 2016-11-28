@@ -1,11 +1,4 @@
 {
   "extension-point": "/registry/extension_point/launchpad",
-  "description": "Registry extension point. Defined functions: " +
-  " + getMenuItem(): JSON Object\n" +
-  " + getHomeItem(): JSON Object\n" +
-  " + getController(): String (AngularJS controller)\n" +
-  " + getRoute(): JSON Object\n" +
-  " + getType(): String\n" +
-  " + getRole(): String\n" +
-  " + getOrder(): Integer"
+  "description": "Registry extension point. Defined functions: getMenuItem(): Object| getHomeItem(): Object| getController(): String| getRoute(): Object| getType(): String| getRole(): String | getOrder(): Integer"
 }
