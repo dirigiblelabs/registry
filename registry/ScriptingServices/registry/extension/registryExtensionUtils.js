@@ -65,8 +65,11 @@ function isFunction(f) {
 }
 
 function createRoute(route) {
-	return '.when(\'' + route.location + '\', {'
-		+ 'controller: \'' + route.controller + '\', '
-		+ 'templateUrl: \'' + route.template + '\''
-		+ '})';
+	var angularJsRoute = '.when(\'' + route.location + '\', {';
+		if (route.controller) {
+			angularJsRoute += 'controller: \'' + route.controller + '\', ';
+		}
+		angularJsRoute += 'templateUrl: \'' + route.template + '\'';
+		angularJsRoute += '})';
+	return angularJsRoute;
 }
