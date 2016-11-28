@@ -14,7 +14,7 @@ exports.getHomeItem = function() {
 		color: "blue",
 		path: "#/content/import",
 		title: "Transport",
-		description: "Transport Registry Content"
+		description: "Transport Content"
 	};
 };
 
@@ -23,6 +23,14 @@ exports.getRoute = function() {
 		'location': '/content/import',
 		'controller': 'TransportCtrl',
 		'template': 'templates/operate/transport.html'
+	};
+};
+
+exports.getDescription = function() {
+	return {
+		"icon": "fa-truck",
+		"title": "Transport Content",
+		"content": "Transport the public artifacts from the Registry. Import Content service provide the end-point for importing public registry content from another instance. Export Content service helps in exporting the content of the public registry as a zip file ready for further import."
 	};
 };
 

@@ -3,25 +3,15 @@
 
 controllers.controller('DevelopCtrl', ['$scope', '$http',
 	function($scope, $http) {
-		loadItems();
-		loadDescriptions();
+		const API_ITEMS = '../../js/registry/api/develop/items.js';
+		const API_DESCRIPTIONS = '../../js/registry/api/develop/descriptions.js';
 
-		function loadItems() {
-			$http.get('../../js/registry/develop/api/items.js').success(function(data){
-				$scope.developData = [];
-				for (var i = 0 ; i < data.length; i++) {
-					$scope.developData.push(data[i]);
-				}
-			});
-		}
-		
-		function loadDescriptions() {
-			$http.get('../../js/registry/data/develop/data.js').success(function(data){
-				$scope.descriptionInfoItems = [];
-				for (var i = 0 ; i < data.length; i++) {
-					$scope.descriptionInfoItems.push(data[i].data);
-				}
-			});
-		}
+		$http.get(API_ITEMS).success(function (data) {
+			$scope.developData = data;
+		});
+
+		$http.get(API_DESCRIPTIONS).success(function (data) {
+			$scope.descriptions = data;
+		});
 	}
 ]);

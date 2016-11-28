@@ -3,25 +3,15 @@
 
 controllers.controller('MonitoringCtrl', ['$scope', '$http',
 	function($scope, $http) {
-		loadItems();
-		loadDescriptions();
+		const API_ITEMS = '../../js/registry/api/monitoring/items.js';
+		const API_DESCRIPTIONS = '../../js/registry/api/monitoring/descriptions.js';
 
-		function loadItems() {
-			$http.get('../../js/registry/monitoring/api/items.js').success(function(data){
-				$scope.monitoringData = [];
-				for (var i = 0 ; i < data.length; i++) {
-					$scope.monitoringData.push(data[i]);
-				}
-			});
-		}
-		
-		function loadDescriptions() {
-			$http.get('../../js/registry/data/discover/data.js').success(function(data){
-				$scope.descriptionInfoItems = [];
-				for (var i = 0 ; i < data.length; i++) {
-					$scope.descriptionInfoItems.push(data[i].data);
-				}
-			});
-		}
+		$http.get(API_ITEMS).success(function (data) {
+			$scope.monitoringData = data;
+		});
+
+		$http.get(API_DESCRIPTIONS).success(function (data) {
+			$scope.descriptions = data;
+		});
 	}
 ]);

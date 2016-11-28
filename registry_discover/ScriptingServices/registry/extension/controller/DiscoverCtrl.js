@@ -3,25 +3,15 @@
 
 controllers.controller('DiscoverCtrl', ['$scope', '$http',
 	function($scope, $http) {
-		loadItems();
-		loadDescriptions();
+		const API_ITEMS = '../../js/registry/api/discover/items.js';
+		const API_DESCRIPTIONS = '../../js/registry/api/discover/descriptions.js';
 
-		function loadItems() {
-			$http.get('../../js/registry/discover/api/items.js').success(function(data){
-				$scope.discoverData = [];
-				for (var i = 0 ; i < data.length; i++) {
-					$scope.discoverData.push(data[i]);
-				}
-			});
-		}
-		
-		function loadDescriptions() {
-			$http.get('../../js/registry/data/discover/data.js').success(function(data){
-				$scope.descriptionInfoItems = [];
-				for (var i = 0 ; i < data.length; i++) {
-					$scope.descriptionInfoItems.push(data[i].data);
-				}
-			});
-		}
+		$http.get(API_ITEMS).success(function (data) {
+			$scope.discoverData = data;
+		});
+
+		$http.get(API_DESCRIPTIONS).success(function (data) {
+			$scope.descriptions = data;
+		});
 	}
 ]);

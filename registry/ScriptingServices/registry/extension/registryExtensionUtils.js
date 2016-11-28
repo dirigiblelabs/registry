@@ -49,6 +49,18 @@ exports.getControllers = function() {
 	return controllers;
 };
 
+exports.getDescriptions = function(type) {
+	var descriptions = [];
+	var registryExtensions = getRegistryExtensions(type);
+	console.error('Description type is: ' + type);
+	
+	for (var i = 0; i < registryExtensions.length; i ++) {
+		if (isFunction(registryExtensions[i].getDescription)) {
+			descriptions.push(registryExtensions[i].getDescription());
+		}
+	}
+	return descriptions;
+};
 
 function getRegistryExtensions(type) {
 	var registryExtensions = [];

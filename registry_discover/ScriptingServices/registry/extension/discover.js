@@ -25,6 +25,14 @@ exports.getHomeItem = function(){
 	};
 };
 
+exports.getDescription = function() {
+	return {
+		"icon": "fa-search",
+		"title": "Discover",
+		"content": "Browse the available source content of the artifacts in the Registry or search for services endpoints in a live Eclipse Dirigible instance."
+	};
+};
+
 exports.getRoute = function() {
 	return {
 		'location': '/discover',

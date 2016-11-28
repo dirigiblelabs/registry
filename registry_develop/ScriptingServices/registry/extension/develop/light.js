@@ -18,6 +18,13 @@ exports.getHomeItem = function() {
 	};
 };
 
+exports.getDescription = function() {
+	return {
+		'icon': 'fa-mobile' ,
+		'title': 'Light IDE' ,
+		'content': 'For quick fixes with simple source code editing and publishing capabilities, there is a lightweight development environment convenient even from mobile devices.'	
+	};
+};
 
 exports.getRoute = function() {
 	return {

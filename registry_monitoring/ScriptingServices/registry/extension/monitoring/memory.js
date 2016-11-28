@@ -14,6 +14,14 @@ exports.getHomeItem = function() {
 	};
 };
 
+exports.getDescription = function() {
+	return {
+		"icon": "fa-bar-chart-o",
+		"title": "Statistics",
+		"content": "Monitor the basic statistics such as Hit Count and Response time for the registered locations. Used Memory chart can give an overview about the load of the instance."
+	};
+};
+
 exports.getRoute = function() {
 	return {
 		'location': '/monitoring/memory',

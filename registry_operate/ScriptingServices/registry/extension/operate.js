@@ -25,6 +25,14 @@ exports.getHomeItem = function(){
 	};
 };
 
+exports.getDescription = function() {
+	return {
+		"icon": "fa-wrench",
+		"title": "Operate",
+		"content": "Perform the life-cycle management operations on a live Eclipse Dirigible instance such as Import, Export, Backup and configurations."
+	};
+};
+
 exports.getRoute = function() {
 	return {
 		'location': '/operate',

@@ -15,6 +15,14 @@ exports.getHomeItem = function() {
 	};
 };
 
+exports.getDescription = function() {
+	return {
+		'icon': 'fa-desktop' ,
+		'title': 'Desktop Eclipse' ,
+		'content': 'There is an update site with Eclipse based plugins convenient especially for \'Java-saurus\' developers, who will never go to a Web IDE for theirs daily tasks.'
+	};
+};
+
 exports.getOrder = function() {
 	return 3;
 };

@@ -18,6 +18,14 @@ exports.getHomeItem = function() {
 	};
 };
 
+exports.getDescription = function() {
+	return {
+		'icon': 'fa-search',
+		'title': 'Browse Content',
+		'content': 'Browse the raw content of the Registry containing all the published artifacts. Inspect the source of the HTML or Wiki pages as well as the code for the scripting services in JavaScript, Java, SQL and Shell Commands'
+	};
+};
+
 exports.getRoute = function() {
 	return {
 		'location': '/content',

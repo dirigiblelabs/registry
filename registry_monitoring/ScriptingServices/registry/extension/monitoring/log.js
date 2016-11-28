@@ -21,6 +21,15 @@ exports.getRoute = function() {
 	};
 };
 
+exports.getDescription = function() {
+	return {
+		"icon": "fa-film",
+		"title": "Logs",
+		"content": "Inspect the applications logs directly from the specified server location."
+	};
+
+};
+
 exports.getOrder = function() {
 	return 6;
 };

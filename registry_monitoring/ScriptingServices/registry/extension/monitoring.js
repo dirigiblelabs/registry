@@ -25,6 +25,14 @@ exports.getHomeItem = function(){
 	};
 };
 
+exports.getDescription = function() {
+	return {
+		"icon": "fa-area-chart",
+		"title": "Monitor",
+		"content": "Monitor the basic metrics of a live Eclipse Dirigible instance as well as inspect the applications and audit logs."
+	};
+};
+
 exports.getRoute = function() {
 	return {
 		'location': '/monitoring',

@@ -18,6 +18,14 @@ exports.getHomeItem = function() {
 	};
 };
 
+exports.getDescription = function() {
+	return {
+		"icon": "fa-wrench",
+		"title": "Manage Location",
+		"content": "Register the locations to which the statistics shall be collected."
+	};
+};
+
 exports.getRoute = function() {
 	return {
 		'location': '/monitoring/manage',

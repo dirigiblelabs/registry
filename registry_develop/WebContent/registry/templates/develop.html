@@ -32,10 +32,10 @@
     </div>
     
 	<div class="center container">
-	        <div class="col-lg-4 heading-lead page-scroll" ng-repeat="nextInfoItem in descriptionInfoItems track by $index">
+	        <div class="col-lg-4 heading-lead page-scroll" ng-repeat="description in descriptions track by $index">
 				<hr class="section-heading-spacer">
                 <div class="clearfix"></div>
-	            <h2><i class="fa {{nextInfoItem.icon}} fa-fw"></i>{{nextInfoItem.title}}</h2>
-	            <p>{{nextInfoItem.content}}</p>
+	            <h2><i class="fa {{description.icon}} fa-fw"></i>{{description.title}}</h2>
+	            <p>{{description.content}}</p>
 	        </div>
 	    </div>

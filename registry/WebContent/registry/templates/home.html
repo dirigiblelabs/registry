@@ -29,3 +29,17 @@
 	        </div>
 	    </a>
  	</div>
+
+	<div class="center container">
+		<div class="col-lg-3 heading-lead page-scroll" ng-repeat="description in descriptions">
+			<hr class="section-heading-spacer">
+			<div class="clearfix"></div>
+			<h2><i class="fa {{ description.icon }} fa-fw"></i>{{ description.title }}</h2>
+			{{ description.content }}
+			<span ng-display="description.listItems">
+				<ul>
+					<li ng-repeat="nextItem in description.listItems"><a href="{{nextItem.url}}">{{nextItem.title}}</a>{{nextItem.description}}</li>
+				</ul>
+			</span>
+		</div>
+	</div>
