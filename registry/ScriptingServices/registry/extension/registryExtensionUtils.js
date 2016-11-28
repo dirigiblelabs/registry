@@ -16,9 +16,9 @@ exports.getMenu = function() {
 	return menu;
 };
 
-exports.getHomeData = function() {
+exports.getHomeData = function(type) {
 	var homeData = [];
-	var registryExtensions = getRegistryExtensions();
+	var registryExtensions = getRegistryExtensions(type);
 	for (var i = 0; i < registryExtensions.length; i ++) {
 		if (isFunction(registryExtensions[i].getHomeItem)) {
 			homeData.push(registryExtensions[i].getHomeItem());
@@ -50,14 +50,35 @@ exports.getControllers = function() {
 };
 
 
-function getRegistryExtensions() {
+function getRegistryExtensions(type) {
 	var registryExtensions = [];
 	var extensionNames = extensions.getExtensions(EXT_POINT_NAME);
 	for (var i = 0; i < extensionNames.length; i ++) {
 		var extension = extensions.getExtension(extensionNames[i], EXT_POINT_NAME);
-		registryExtensions.push(require(extension.getLocation()));
+		var extensionModule = require(extension.getLocation());
+		if (type) {
+			if (isFunction(extensionModule.getType) && type === extensionModule.getType()) {
+				registryExtensions.push({
+					'order': isFunction(extensionModule.getOrder) ? extensionModule.getOrder() : Number.MAX_VALUE,
+					'module': extensionModule
+				});
+			}
+		} else {
+			registryExtensions.push({
+					'order': isFunction(extensionModule.getOrder) ? extensionModule.getOrder() : Number.MAX_VALUE,
+					'module': extensionModule
+				});
+		}
 	}
-	return registryExtensions;
+
+	sort(registryExtensions);
+
+	var extensionModules = [];
+	for (i = 0; i < registryExtensions.length; i ++) {
+		extensionModules.push(registryExtensions[i].module);
+	}
+	console.log(extensionModules);
+	return extensionModules;
 }
 
 function isFunction(f) {
@@ -72,4 +93,10 @@ function createRoute(route) {
 		angularJsRoute += 'templateUrl: \'' + route.template + '\'';
 		angularJsRoute += '})';
 	return angularJsRoute;
+}
+
+function sort(data) {
+	data.sort(function(a, b) {
+		return a.order - b.order;
+	});
 }

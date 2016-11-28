@@ -4,6 +4,10 @@ var repository = require('platform/repository');
 
 const CONTROLLER_LOCATION = '/db/dirigible/registry/public/ScriptingServices/registry/extension/controller/MonitoringCtrl.js';
 
+exports.getType = function() {
+	return 'Home';
+};
+
 exports.getMenuItem = function() {
 	return {
 		name: 'Monitoring',
@@ -31,4 +35,8 @@ exports.getRoute = function() {
 
 exports.getController = function() {
 	return repository.getResource(CONTROLLER_LOCATION).getTextContent();
+};
+
+exports.getOrder = function() {
+	return 4;
 };

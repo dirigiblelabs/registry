@@ -3,33 +3,21 @@
 
 controllers.controller('OperateCtrl', ['$scope', '$http',
 	function($scope, $http) {
-		$scope.operateData = [{
-				image: "truck",
-				color: "blue",
-				path: "#/content/import",
-				title: "Transport",
-				description: "Transport Registry Content"
-			}, {
-				image: "toggle-on",
-				color: "green",
-				path: "#/content/clone",
-				title: "Clone",
-				description: "Clone Instance"
-			}, {
-				image: "sign-in",
-				color: "yellow",
-				path: "#/content/project",
-				title: "Import",
-				description: "Import Project"
-			}
-		];
-
-		$scope.descriptionInfoItems = [];
-
+		loadItems();
 		loadDescriptions();
-	
+
+		function loadItems() {
+			$http.get('../../js/registry/operate/api/items.js').success(function(data){
+				$scope.operateData = [];
+				for (var i = 0 ; i < data.length; i++) {
+					$scope.operateData.push(data[i]);
+				}
+			});
+		}
+		
 		function loadDescriptions() {
 			$http.get('../../js/registry/data/operate/data.js').success(function(data){
+				$scope.descriptionInfoItems = [];
 				for (var i = 0 ; i < data.length; i++) {
 					$scope.descriptionInfoItems.push(data[i].data);
 				}

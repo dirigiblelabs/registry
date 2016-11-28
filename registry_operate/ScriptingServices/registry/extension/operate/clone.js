@@ -4,6 +4,19 @@ var repository = require('platform/repository');
 
 const CONTROLLER_LOCATION = '/db/dirigible/registry/public/ScriptingServices/registry/extension/controller/operate/CloneCtrl.js';
 
+exports.getType = function() {
+	return 'Operate';
+};
+
+exports.getHomeItem = function() {
+	return {
+		image: "toggle-on",
+		color: "green",
+		path: "#/content/clone",
+		title: "Clone",
+		description: "Clone Instance"
+	};
+};
 exports.getRoute = function() {
 	return {
 		'location': '/content/clone',
@@ -14,4 +27,8 @@ exports.getRoute = function() {
 
 exports.getController = function() {
 	return repository.getResource(CONTROLLER_LOCATION).getTextContent();
+};
+
+exports.getOrder = function() {
+	return 2;
 };

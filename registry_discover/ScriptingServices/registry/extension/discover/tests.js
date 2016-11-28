@@ -4,6 +4,20 @@ var repository = require('platform/repository');
 
 const CONTROLLER_LOCATION = '/db/dirigible/registry/public/ScriptingServices/registry/extension/controller/discover/TestsCtrl.js';
 
+exports.getType = function() {
+	return 'Discover';
+};
+
+exports.getHomeItem = function() {
+	return {
+		image: 'cogs',
+		color: 'green',
+		path: '#/scripting/tests',
+		title: 'Tests',
+		description: 'Test Cases'
+	};
+};
+
 exports.getRoute = function() {
 	return {
 		'location': '/scripting/tests',
@@ -14,4 +28,8 @@ exports.getRoute = function() {
 
 exports.getController = function() {
 	return repository.getResource(CONTROLLER_LOCATION).getTextContent();
+};
+
+exports.getOrder = function() {
+	return 8;
 };

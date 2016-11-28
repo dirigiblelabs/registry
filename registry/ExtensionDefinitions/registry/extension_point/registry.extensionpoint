@@ -3,6 +3,9 @@
   "description": "Registry extension point. Defined functions: " +
   " + getMenuItem(): JSON Object\n" +
   " + getHomeItem(): JSON Object\n" +
-  " + getController(): Text (AngularJS controller)\n" +
-  " + getRoute(): JSON Object"
+  " + getController(): String (AngularJS controller)\n" +
+  " + getRoute(): JSON Object\n" +
+  " + getType(): String\n" +
+  " + getRole(): String\n" +
+  " + getOrder(): Integer"
 }
