@@ -11,7 +11,7 @@ exports.getType = function() {
 exports.getHomeItem = function() {
 	return {
 		image: 'search',
-		color: 'green',
+		color: 'blue',
 		path: '#/content',
 		title: 'Registry',
 		description: 'Browse Registry Content'

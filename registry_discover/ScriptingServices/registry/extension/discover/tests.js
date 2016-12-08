@@ -11,7 +11,7 @@ exports.getType = function() {
 exports.getHomeItem = function() {
 	return {
 		image: 'cogs',
-		color: 'green',
+		color: 'red',
 		path: '#/scripting/tests',
 		title: 'Tests',
 		description: 'Test Cases'

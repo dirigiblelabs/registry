@@ -10,7 +10,7 @@ exports.getType = function() {
 
 exports.getHomeItem = function() {
 	return {
-		image: 'caret-square-o-right',
+		image: 'tasks',
 		color: 'orange',
 		path: '#/integration/job',
 		title: 'Jobs',

@@ -10,7 +10,7 @@ exports.getType = function() {
 
 exports.getHomeItem = function() {
 	return {
-		image: 'caret-square-o-right',
+		image: 'assistive-listening-systems',
 		color: 'orange',
 		path: '#/integration/listener',
 		title: 'Listeners',

@@ -11,7 +11,7 @@ exports.getType = function() {
 exports.getHomeItem = function() {
 	return {
 		image: 'mobile-phone',
-		color: 'blue',
+		color: 'lila',
 		path: '#/mobile',
 		title: 'Mobile',
 		description: 'Native Mobile Apps'

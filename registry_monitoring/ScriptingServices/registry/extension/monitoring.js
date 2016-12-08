@@ -10,7 +10,7 @@ exports.getType = function() {
 
 exports.getMenuItem = function() {
 	return {
-		name: 'Monitoring',
+		name: 'Monitor',
 		link: '#/monitoring'
 	};
 };
@@ -20,7 +20,7 @@ exports.getHomeItem = function(){
 		image: 'area-chart',
 		color: 'red',
 		path: '#/monitoring',
-		title: 'Monitoring',
+		title: 'Monitor',
 		description: 'Basic Metrics'
 	};
 };
