@@ -1,0 +1,29 @@
+{
+    "guid": "registry",
+    "repository": {
+        "type": "git",
+        "branch": "master",
+        "url": "https://github.com/dirigiblelabs/zeus.git"
+    },
+    "dependencies": [{
+        "guid":"registry_develop",
+        "type": "git",
+        "url": "https://github.com/dirigiblelabs/registry_develop.git",
+        "branch":"master"
+    }, {
+        "guid":"registry_discover",
+        "type": "git",
+        "url": "https://github.com/dirigiblelabs/registry_discover.git",
+        "branch":"master"
+    }, {
+        "guid":"registry_monitoring",
+        "type": "git",
+        "url": "https://github.com/dirigiblelabs/registry_monitoring.git",
+        "branch":"master"
+    }, {
+        "guid":"registry_operate",
+        "type": "git",
+        "url": "https://github.com/dirigiblelabs/registry_operate.git",
+        "branch":"master"
+    }]
+}
