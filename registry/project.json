@@ -5,7 +5,8 @@
         "branch": "master",
         "url": "https://github.com/dirigiblelabs/registry.git"
     },
-    "dependencies": [{
+    "dependencies": [
+    {
         "guid":"registry_develop",
         "type": "git",
         "url": "https://github.com/dirigiblelabs/registry_develop.git",
@@ -25,5 +26,11 @@
         "type": "git",
         "url": "https://github.com/dirigiblelabs/registry_operate.git",
         "branch":"master"
-    }]
+    }, {
+        "guid":"registry_orion",
+        "type": "git",
+        "url": "https://github.com/dirigiblelabs/registry_orion.git",
+        "branch":"master"
+    }
+    ]
 }
