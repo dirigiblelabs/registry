@@ -31,6 +31,11 @@
         "type": "git",
         "url": "https://github.com/dirigiblelabs/registry_orion.git",
         "branch":"master"
+    }, {
+        "guid":"resources",
+        "type": "git",
+        "url": "https://github.com/dirigiblelabs/resources.git",
+        "branch":"master"
     }
     ]
 }
